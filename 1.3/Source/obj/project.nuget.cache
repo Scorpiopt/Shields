@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Sellp3c6PN4QkY20bzUQJYcoE+krPhJTzhSOnpd5uyBdvsEvhwAFKgcmhlLceY11RVZLyXosJryBCECcRfJ0hg==",
+  "dgSpecHash": "+odht9voatLvnSZMwcdszHRmigLx0vdYHvlBuz2dRl5wEZ09MmkZQ5GPA8aPgIAB3TNSidANKFzX2Qe1lCZnKA==",
   "success": true,
-  "projectFilePath": "c:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Shields\\1.3\\Source\\ShieldsAutoPatcher.csproj",
+  "projectFilePath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Shields\\1.3\\Source\\ShieldsAutoPatcher.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Vova\\.nuget\\packages\\krafs.publicizer\\1.0.2\\krafs.publicizer.1.0.2.nupkg.sha512",
     "C:\\Users\\Vova\\.nuget\\packages\\krafs.rimworld.ref\\1.3.3326\\krafs.rimworld.ref.1.3.3326.nupkg.sha512",

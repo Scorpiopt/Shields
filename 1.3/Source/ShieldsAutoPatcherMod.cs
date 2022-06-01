@@ -107,6 +107,8 @@ namespace ShieldsAutoPatcher
         }
 
         string searchKey;
+        public bool showMeleeWeapons = true;
+        public bool showRangedWeapons = true;
         public void DoSettingsWindowContents(Rect inRect)
         {
             Rect rect = new Rect(inRect.x, inRect.y, inRect.width, inRect.height);
@@ -116,16 +118,26 @@ namespace ShieldsAutoPatcher
             var searchRect = new Rect(searchLabel.xMax + 5, searchLabel.y, 200, 24f);
             searchKey = Widgets.TextField(searchRect, searchKey);
             Text.Anchor = TextAnchor.UpperLeft;
-            var explanationTitleRect = new Rect(searchRect.xMax + 15, searchRect.y, inRect.width - (searchLabel.width + searchRect.width + 35), 54f);
-            Widgets.Label(explanationTitleRect, "Shields.ExplanationTitle".Translate());
+
+            var showMeleeWeaponsRect = new Rect(searchRect.xMax + 15, searchRect.y, 180, 24);
+            Widgets.CheckboxLabeled(showMeleeWeaponsRect, "Shields.ShowMeleeWeapons".Translate(), ref showMeleeWeapons);
+
+            var showRangeWeaponsRect = new Rect(showMeleeWeaponsRect.xMax + 30, searchRect.y, 180, 24);
+            Widgets.CheckboxLabeled(showRangeWeaponsRect, "Shields.ShowRangeWeapons".Translate(), ref showRangedWeapons);
+
             var thingDefs = (searchKey.NullOrEmpty() ? allWeapons : allWeapons.Where(x => x.label.ToLower().Contains(searchKey.ToLower())))
-                .OrderBy(x => x.label).ToList();
+                .Where(x => x.IsRangedWeapon && showRangedWeapons || x.IsMeleeWeapon && showMeleeWeapons).OrderBy(x => x.label).ToList();
+            
             var resetRect = new Rect(searchLabel.x, searchLabel.yMax + 5, 265, 24f);
             if (Widgets.ButtonText(resetRect, "Shields.ResetModSettingsToDefault".Translate()))
             {
                 usableWithShieldsWeapons.Clear();
                 ShieldsAutoPatcherStartup.SetValues();
             }
+
+            var explanationTitleRect = new Rect(resetRect.xMax + 15, resetRect.y, inRect.width - (resetRect.width + 35), 24f);
+            Widgets.Label(explanationTitleRect, "Shields.ExplanationTitle".Translate());
+
             var height = GetScrollHeight(thingDefs);
             Rect outerRect = new Rect(rect.x, searchRect.yMax + 35, rect.width, rect.height - 70);
             Rect viewArea = new Rect(rect.x, outerRect.y, rect.width - 16, height);
@@ -155,14 +167,14 @@ namespace ShieldsAutoPatcher
             Widgets.EndScrollView();
         }
 
-        private float GetScrollHeight(List<ThingDef> thingGroups)
+        private float GetScrollHeight(List<ThingDef> defs)
         {
             float num = 0;
-            foreach (var group in thingGroups)
+            foreach (var def in defs)
             {
                 num += 24;
             }
-            return num;
+            return num + 5;
         }
         private static Vector2 scrollPosition = Vector2.zero;
     }
