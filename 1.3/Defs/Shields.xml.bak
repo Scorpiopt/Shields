@@ -61,7 +61,7 @@
 		</comps>
 	</ThingDef>
 	<ThingDef ParentName="ScorpioShieldQualityBase">
-        <defName>Scorpio_TribalShield</defName> 
+        <defName>Scorpio_TribalShield</defName>
         <label>tribal shield</label>
         <description>A protective piece of wood, strapped with leather. Neolithic communities use similarly designed shields for traditions such as hunting very dangerous beasts..</description>
         <techLevel>Neolithic</techLevel>
@@ -74,10 +74,9 @@
 			<li>Leathery</li>
 		</stuffCategories>
 		<costStuffCount>10</costStuffCount>
-		<stuffCategories>
-			<li>Woody</li>
-		</stuffCategories>
-		<costStuffCount>30</costStuffCount>
+		<costList>
+            <WoodLog>40</WoodLog>
+        </costList>
         <equippedStatOffsets>
             <ShootingAccuracyPawn>-2</ShootingAccuracyPawn>
             <MeleeDodgeChance>-2</MeleeDodgeChance>
