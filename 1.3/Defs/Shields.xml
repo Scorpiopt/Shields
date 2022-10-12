@@ -61,10 +61,11 @@
 		</comps>
 	</ThingDef>
 	<ThingDef ParentName="ScorpioShieldQualityBase">
+    <techLevel>Neolithic</techLevel>
         <defName>Scorpio_TribalShield</defName> 
         <label>tribal shield</label>
         <description>A protective piece of wood, strapped with leather. Neolithic communities use similarly designed shields for traditions such as hunting very dangerous beasts..</description>
-        <techLevel>Neolithic</techLevel>
+        
 		<graphicData>
             <texPath>Things/Item/Equipment/Shield/zulushield</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -72,12 +73,9 @@
         </graphicData>
 		<stuffCategories>
 			<li>Leathery</li>
-		</stuffCategories>
-		<costStuffCount>10</costStuffCount>
-		<stuffCategories>
 			<li>Woody</li>
 		</stuffCategories>
-		<costStuffCount>30</costStuffCount>
+		<costStuffCount>15</costStuffCount>
         <equippedStatOffsets>
             <ShootingAccuracyPawn>-2</ShootingAccuracyPawn>
             <MeleeDodgeChance>-2</MeleeDodgeChance>
@@ -205,10 +203,10 @@
     </ThingDef>
 
     <ThingDef ParentName="ScorpioShieldQualityBase">
+        <techLevel>Industrial</techLevel>
         <defName>Scorpio_BallisticShield</defName>
         <label>ballistic shield</label>
         <description>A modern defense shield with thick steel plating. Very cumbersome and uncomfortable but protects well from small arms fire. An urbworld riot police officer's backbone.</description>
-        <techLevel>Industrial</techLevel>
 		<graphicData>
             <texPath>Things/Item/Equipment/Shield/BallisticShield</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -270,20 +268,19 @@
             </li>
         </comps>
 		<recipeMaker>
-			<recipeUsers>
+			<researchPrerequisite>Machining</researchPrerequisite>
+			<recipeUsers Inherit="False">
 				<li>TableMachining</li>
 			</recipeUsers>
 		</recipeMaker>
-		<researchPrerequisites>
-			<li>Machining</li>
-		</researchPrerequisites>
     </ThingDef>
 
     <ThingDef ParentName="ScorpioShieldQualityBase">
+     <techLevel>Spacer</techLevel>
         <defName>Scorpio_AdvancedShield</defName>
         <label>advanced shield</label>
         <description>An advanced projector that emits a momentum repulsor field. Sleek and lightweight design makes it comfortable to use, even without a powered armor. Many marines owe their lives to it.</description>
-        <techLevel>Spacer</techLevel>
+      
 		<graphicData>
             <texPath>Things/Item/Equipment/Shield/SpacerShield</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -340,13 +337,11 @@
             </li>
         </comps>
 		<recipeMaker>
+			<researchPrerequisite>MicroelectronicsBasics</researchPrerequisite>
 			<recipeUsers Inherit="False">
-				<li>TableMachining</li>
+				<li>FabricationBench</li>
 			</recipeUsers>
 		</recipeMaker>
-		<researchPrerequisites>
-			<li>MicroelectronicsBasics</li>
-		</researchPrerequisites>
     </ThingDef>
 	
     <ThingDef ParentName="ScorpioShieldBase">
