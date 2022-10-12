@@ -1,8 +1,0 @@
-c:\Files\ModSourceTemplate\Assemblies\ModSourceTemplate.dll
-c:\Files\ModSourceTemplate\Source\obj\Debug\ModSourceTemplate.csproj.AssemblyReference.cache
-c:\Files\ModSourceTemplate\Source\obj\Debug\ModSourceTemplate.csproj.CoreCompileInputs.cache
-c:\Files\ModSourceTemplate\Source\obj\Debug\ModSourceTemplate.dll
-c:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Shields\1.3\Assemblies\ShieldsAutoPatcher.dll
-c:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Shields\1.3\Source\obj\Debug\ShieldsAutoPatcher.csproj.AssemblyReference.cache
-c:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Shields\1.3\Source\obj\Debug\ShieldsAutoPatcher.csproj.CoreCompileInputs.cache
-c:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Shields\1.3\Source\obj\Debug\ShieldsAutoPatcher.dll

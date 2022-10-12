@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
-	<Shields.Search>Search: </Shields.Search>
-	<Shields.ResetModSettingsToDefault>Reset mod settings to default</Shields.ResetModSettingsToDefault>
-	<Shields.ExplanationTitle>Set weapons to be usable or not usable with shields.</Shields.ExplanationTitle>
-	<Shields.ShowMeleeWeapons>Show melee weapons</Shields.ShowMeleeWeapons>
-	<Shields.ShowRangeWeapons>Show range weapons</Shields.ShowRangeWeapons>
+
 </LanguageData>

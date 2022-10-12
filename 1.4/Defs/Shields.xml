@@ -90,7 +90,6 @@
             <Mass>1.0</Mass>
         </statBases>
         <comps>
-            <li Class="CompOversizedWeapon.CompProperties_OversizedWeapon"/>
             <li Class="VFECore.CompProperties_Shield">
                 <shieldTags>
                     <li>Classical</li>
@@ -161,7 +160,6 @@
             <Mass>2.5</Mass>
         </statBases>
         <comps>
-            <li Class="CompOversizedWeapon.CompProperties_OversizedWeapon"/>
             <li Class="VFECore.CompProperties_Shield">
                 <shieldTags>
                     <li>MedievalBasic</li>
@@ -231,7 +229,6 @@
             <Mass>2</Mass>
         </statBases>
         <comps>
-            <li Class="CompOversizedWeapon.CompProperties_OversizedWeapon"/>
             <li Class="VFECore.CompProperties_Shield">
                 <shieldTags>
                     <li>IndustrialMilitaryBasic</li>
@@ -300,7 +297,6 @@
             <Mass>1.5</Mass>
         </statBases>
         <comps>
-            <li Class="CompOversizedWeapon.CompProperties_OversizedWeapon"/>
             <li Class="VFECore.CompProperties_Shield">
                 <shieldTags>
                     <li>SpacerMilitary</li>
@@ -337,19 +333,11 @@
             </li>
         </comps>
 		<recipeMaker>
-			     <skillRequirements>
-				<Crafting>9</Crafting>
-			</skillRequirements>
-			</recipeMaker>
-			<recipeUsers>
+			<researchPrerequisite>MicroelectronicsBasics</researchPrerequisite>
+			<recipeUsers Inherit="False">
 				<li>FabricationBench</li>
 			</recipeUsers>
-			<researchPrerequisites>
-			<li>MicroelectronicsBasics</li> 
-			</researchPrerequisites>
-		
-		
-             
+		</recipeMaker>
     </ThingDef>
 	
     <ThingDef ParentName="ScorpioShieldBase">
@@ -380,8 +368,8 @@
 			<MoveSpeed>0.3</MoveSpeed>
             <MeleeDodgeChance>1</MeleeDodgeChance>
         </equippedStatOffsets>
+		<smeltable>false</smeltable>
         <comps>
-            <li Class="CompOversizedWeapon.CompProperties_OversizedWeapon"/>
             <li Class="VFECore.CompProperties_Shield">
                 <shieldTags>
                     <li>SpacerMilitary</li>
