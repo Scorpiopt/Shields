@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <ThingDef Name="ScorpioShieldBase" ParentName="BaseMeleeWeapon_Blunt" Abstract="True">
+        <thingCategories Inherit="False">
+            <li>VFEC_Shields</li>
+        </thingCategories>
+		<weaponClasses Inherit="False">
+			<li>MeleeBlunt</li>
+		</weaponClasses>
+		<thingClass>VFECore.Apparel_Shield</thingClass>
+		<apparel>
+			<defaultOutfitTags>
+				<li>Soldier</li>
+			</defaultOutfitTags>
+			<bodyPartGroups>
+				<li>LeftHand</li>
+			</bodyPartGroups>
+			<layers>
+				<li>VFEC_OuterShell</li>
+			</layers>
+			<countsAsClothingForNudity>false</countsAsClothingForNudity>
+			<canBeDesiredForIdeo>false</canBeDesiredForIdeo>
+		</apparel>
+        <comps>
+            <li>
+                <compClass>CompColorable</compClass>
+            </li>
+			<li Class="CompProperties_Art">
+				<nameMaker>NamerArtWeaponMelee</nameMaker>
+				<descriptionMaker>ArtDescription_WeaponMelee</descriptionMaker>
+				<minQualityForArtistic>Excellent</minQualityForArtistic>
+			</li>
+        </comps>
+        <equippedAngleOffset>-30</equippedAngleOffset>
+        <tools>
+            <li>
+                <label>base</label>
+                <capacities>
+                    <li>Poke</li>
+                </capacities>
+                <power>9</power>
+                <cooldownTime>2</cooldownTime>
+            </li>
+            <li>
+                <label>centre</label>
+                <labelUsedInLogging>false</labelUsedInLogging>
+                <capacities>
+                    <li>Blunt</li>
+                </capacities>
+                <power>9</power>
+                <cooldownTime>2</cooldownTime>
+            </li>
+        </tools>
+		<tradeTags>
+			<li>Armor</li>
+		</tradeTags>
+    </ThingDef>
+    <ThingDef Name="ScorpioShieldQualityBase" ParentName="ScorpioShieldBase" Abstract="True">
+		<comps>
+			<li>
+				<compClass>CompQuality</compClass>
+			</li>
+		</comps>
+	</ThingDef>
+	<ThingDef ParentName="ScorpioShieldQualityBase">
+    <techLevel>Neolithic</techLevel>
+        <defName>Scorpio_TribalShield</defName> 
+        <label>tribal shield</label>
+        <description>A protective piece of wood, strapped with leather. Neolithic communities use similarly designed shields for traditions such as hunting very dangerous beasts..</description>
+        
+		<graphicData>
+            <texPath>Things/Item/Equipment/Shield/zulushield</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>1</drawSize>
+        </graphicData>
+		<stuffCategories>
+			<li>Leathery</li>
+			<li>Woody</li>
+		</stuffCategories>
+		<costStuffCount>15</costStuffCount>
+        <equippedStatOffsets>
+            <ShootingAccuracyPawn>-2</ShootingAccuracyPawn>
+            <MeleeDodgeChance>-2</MeleeDodgeChance>
+        </equippedStatOffsets>
+        <statBases>
+            <MaxHitPoints>100</MaxHitPoints>
+            <Flammability>1.0</Flammability>
+            <ArmorRating_Sharp>0.3</ArmorRating_Sharp>
+            <ArmorRating_Blunt>0.2</ArmorRating_Blunt>
+            <ArmorRating_Heat>0.1</ArmorRating_Heat>
+            <WorkToMake>3000</WorkToMake>
+            <Mass>1.0</Mass>
+        </statBases>
+        <comps>
+            <li Class="VFECore.CompProperties_Shield">
+                <shieldTags>
+                    <li>Classical</li>
+                </shieldTags>
+                <useDeflectMetalEffect>true</useDeflectMetalEffect>
+                <coveredBodyPartGroups>
+                    <li>Neck</li>
+                    <li>Torso</li>
+                    <li>Arms</li>
+                    <li>Hands</li>
+                </coveredBodyPartGroups>
+                <offHandGraphicData>
+                    <texPath>Things/Item/Equipment/Shield/zulushield</texPath>
+                    <graphicClass>Graphic_Multi</graphicClass>
+                    <shaderType>CutoutComplex</shaderType>
+                    <drawSize>1.4</drawSize>
+                </offHandGraphicData>
+                 <offHandHoldOffset>
+                    <northDefault>
+                        <offset>(-0.05, 0, 0.2)</offset>
+                        <behind>true</behind>
+                    </northDefault>
+                    <east>
+                        <offset>(-0.15, 0, 0.2)</offset>
+                        <behind>true</behind>
+                    </east>
+                    <south>
+                        <offset>(0.3, -0.04, 0.1)</offset>
+                    </south>
+                    <west>
+                        <offset>(0.15, 0, 0.2)</offset>
+                    </west>
+                </offHandHoldOffset>
+            </li>
+        </comps>
+        <recipeMaker>
+			<recipeUsers>
+				<li>CraftingSpot</li>
+			</recipeUsers>
+		</recipeMaker>		
+    </ThingDef>
+    <ThingDef ParentName="ScorpioShieldQualityBase">
+        <defName>Scorpio_SpartanShield</defName>
+        <label>spartan shield</label>
+        <description>A simple shield forged with care. Being one of the oldest combat tools, it can deflect sword slashes and spear thrusts. Quite light, but isn't very comfortable to carry around.</description>
+        <techLevel>Medieval</techLevel>
+		<graphicData>
+            <texPath>Things/Item/Equipment/Shield/MedievalShield</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>1</drawSize>
+        </graphicData>
+		<stuffCategories>
+			<li>Metallic</li>
+		</stuffCategories>
+		<costStuffCount>40</costStuffCount>
+        <equippedStatOffsets>
+            <ShootingAccuracyPawn>-2</ShootingAccuracyPawn>
+			<MoveSpeed>-0.25</MoveSpeed>
+            <MeleeDodgeChance>-1</MeleeDodgeChance>
+        </equippedStatOffsets>
+        <statBases>
+            <MaxHitPoints>120</MaxHitPoints>
+            <Flammability>0</Flammability>
+            <ArmorRating_Sharp>0.5</ArmorRating_Sharp>
+            <ArmorRating_Blunt>0.5</ArmorRating_Blunt>
+            <ArmorRating_Heat>0.4</ArmorRating_Heat>
+            <WorkToMake>3000</WorkToMake>
+            <Mass>2.5</Mass>
+        </statBases>
+        <comps>
+            <li Class="VFECore.CompProperties_Shield">
+                <shieldTags>
+                    <li>MedievalBasic</li>
+                </shieldTags>
+                <useDeflectMetalEffect>true</useDeflectMetalEffect>
+                <coveredBodyPartGroups>
+                    <li>Neck</li>
+                    <li>Torso</li>
+                    <li>Arms</li>
+                    <li>Hands</li>
+                </coveredBodyPartGroups>
+                <offHandGraphicData>
+                    <texPath>Things/Item/Equipment/Shield/MedievalShield</texPath>
+                    <graphicClass>Graphic_Multi</graphicClass>
+                    <shaderType>CutoutComplex</shaderType>
+                    <drawSize>1.4</drawSize>
+                </offHandGraphicData>
+                 <offHandHoldOffset>
+                    <northDefault>
+                        <offset>(-0.05, 0, 0.2)</offset>
+                        <behind>true</behind>
+                    </northDefault>
+                    <east>
+                        <offset>(-0.15, 0, 0.2)</offset>
+                        <behind>true</behind>
+                    </east>
+                    <south>
+                        <offset>(0.3, -0.04, 0.1)</offset>
+                    </south>
+                    <west>
+                        <offset>(0.15, 0, 0.2)</offset>
+                    </west>
+                </offHandHoldOffset>
+            </li>
+        </comps>
+		<researchPrerequisites>
+			<li>Smithing</li>
+		</researchPrerequisites>
+    </ThingDef>
+
+    <ThingDef ParentName="ScorpioShieldQualityBase">
+        <techLevel>Industrial</techLevel>
+        <defName>Scorpio_BallisticShield</defName>
+        <label>ballistic shield</label>
+        <description>A modern defense shield with thick steel plating. Very cumbersome and uncomfortable but protects well from small arms fire. An urbworld riot police officer's backbone.</description>
+		<graphicData>
+            <texPath>Things/Item/Equipment/Shield/BallisticShield</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>1</drawSize>
+        </graphicData>
+		<costList>
+			<Steel>80</Steel>
+			<ComponentIndustrial>1</ComponentIndustrial>
+		</costList>
+        <equippedStatOffsets>
+            <ShootingAccuracyPawn>-1</ShootingAccuracyPawn>
+			<MoveSpeed>-0.15</MoveSpeed>
+            <MeleeDodgeChance>-1</MeleeDodgeChance>
+        </equippedStatOffsets>
+        <statBases>
+            <MaxHitPoints>180</MaxHitPoints>
+            <Flammability>0</Flammability>
+            <ArmorRating_Sharp>0.72</ArmorRating_Sharp>
+            <ArmorRating_Blunt>0.85</ArmorRating_Blunt>
+            <ArmorRating_Heat>0.65</ArmorRating_Heat>
+            <WorkToMake>3000</WorkToMake>
+            <Mass>2</Mass>
+        </statBases>
+        <comps>
+            <li Class="VFECore.CompProperties_Shield">
+                <shieldTags>
+                    <li>IndustrialMilitaryBasic</li>
+                </shieldTags>
+                <useDeflectMetalEffect>true</useDeflectMetalEffect>
+                <coveredBodyPartGroups>
+                    <li>Neck</li>
+                    <li>Torso</li>
+                    <li>Arms</li>
+                    <li>Hands</li>
+                </coveredBodyPartGroups>
+                <offHandGraphicData>
+                    <texPath>Things/Item/Equipment/Shield/BallisticShield</texPath>
+                    <graphicClass>Graphic_Multi</graphicClass>
+                    <shaderType>CutoutComplex</shaderType>
+                    <drawSize>1.3</drawSize>
+                </offHandGraphicData>
+                 <offHandHoldOffset>
+                    <northDefault>
+                        <offset>(-0.05, 0, 0.2)</offset>
+                        <behind>true</behind>
+                    </northDefault>
+                    <east>
+                        <offset>(-0.15, 0, 0.2)</offset>
+                        <behind>true</behind>
+                    </east>
+                    <south>
+                        <offset>(0.3, -0.04, 0.0)</offset>
+                    </south>
+                    <west>
+                        <offset>(0.15, 0, 0.2)</offset>
+                    </west>
+                </offHandHoldOffset>
+            </li>
+        </comps>
+		<recipeMaker>
+			<researchPrerequisite>Machining</researchPrerequisite>
+			<recipeUsers Inherit="False">
+				<li>TableMachining</li>
+			</recipeUsers>
+		</recipeMaker>
+    </ThingDef>
+
+    <ThingDef ParentName="ScorpioShieldQualityBase">
+     <techLevel>Spacer</techLevel>
+        <defName>Scorpio_AdvancedShield</defName>
+        <label>advanced shield</label>
+        <description>An advanced projector that emits a momentum repulsor field. Sleek and lightweight design makes it comfortable to use, even without a powered armor. Many marines owe their lives to it.</description>
+      
+		<graphicData>
+            <texPath>Things/Item/Equipment/Shield/SpacerShield</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>1.3</drawSize>
+        </graphicData>
+		<costList>
+			<Plasteel>60</Plasteel>
+			<ComponentSpacer>2</ComponentSpacer>
+		</costList>
+        <statBases>
+            <MaxHitPoints>210</MaxHitPoints>
+            <Flammability>0</Flammability>
+            <ArmorRating_Sharp>1.2</ArmorRating_Sharp>
+            <ArmorRating_Blunt>1.2</ArmorRating_Blunt>
+            <ArmorRating_Heat>0.75</ArmorRating_Heat>
+            <WorkToMake>3000</WorkToMake>
+            <Mass>1.5</Mass>
+        </statBases>
+        <comps>
+            <li Class="VFECore.CompProperties_Shield">
+                <shieldTags>
+                    <li>SpacerMilitary</li>
+                </shieldTags>
+                <useDeflectMetalEffect>true</useDeflectMetalEffect>
+                <coveredBodyPartGroups>
+                    <li>Neck</li>
+                    <li>Torso</li>
+                    <li>Arms</li>
+                    <li>Hands</li>
+                </coveredBodyPartGroups>
+                <offHandGraphicData>
+                    <texPath>Things/Item/Equipment/Shield/SpacerShield</texPath>
+                    <graphicClass>Graphic_Multi</graphicClass>
+                    <shaderType>TransparentPostLight</shaderType>
+                    <drawSize>1.3</drawSize>
+                </offHandGraphicData>
+                <offHandHoldOffset>
+                    <northDefault>
+                        <offset>(-0.05, 0, 0.2)</offset>
+                        <behind>true</behind>
+                    </northDefault>
+                    <east>
+                        <offset>(-0.15, 0, 0.2)</offset>
+                        <behind>true</behind>
+                    </east>
+                    <south>
+                        <offset>(0.2, -0.04, 0.2)</offset>
+                    </south>
+                    <west>
+                        <offset>(0.15, 0, 0.2)</offset>
+                    </west>
+                </offHandHoldOffset>
+            </li>
+        </comps>
+		<recipeMaker>
+			<researchPrerequisite>MicroelectronicsBasics</researchPrerequisite>
+			<recipeUsers Inherit="False">
+				<li>FabricationBench</li>
+			</recipeUsers>
+		</recipeMaker>
+    </ThingDef>
+	
+    <ThingDef ParentName="ScorpioShieldBase">
+        <defName>Scorpio_ArchotechShield</defName>
+        <label>archotech shield</label>
+        <description>An archotech shield projector, fueled by a mini vanometric power cell within. At first glance it looks like the projectiles bounce off of it, but with a closer look, one would realize that a lot of them vanish into thin air for seemingly no reason. It also has a psychic motivator to make the user move slightly faster. Glitterworld scholars believe it has something to do with the quantum foam, similar with vanometrics.</description>
+        <techLevel>Archotech</techLevel>
+		<tradeTags>
+			<li>Artifact</li>
+		</tradeTags>
+		<thingSetMakerTags><li>RewardStandardHighFreq</li></thingSetMakerTags>
+		<graphicData>
+            <texPath>Things/Item/Equipment/Shield/ArchotechShield</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>1.6</drawSize>
+        </graphicData>
+        <statBases>
+			<MarketValue>2500</MarketValue>
+            <MaxHitPoints>50000</MaxHitPoints>
+            <Flammability>0</Flammability>
+            <ArmorRating_Sharp>1.5</ArmorRating_Sharp>
+            <ArmorRating_Blunt>1.5</ArmorRating_Blunt>
+            <ArmorRating_Heat>0.55</ArmorRating_Heat>
+            <Mass>1</Mass>
+			<DeteriorationRate>0</DeteriorationRate>
+        </statBases>
+        <equippedStatOffsets>
+            <ShootingAccuracyPawn>1</ShootingAccuracyPawn>
+			<MoveSpeed>0.3</MoveSpeed>
+            <MeleeDodgeChance>1</MeleeDodgeChance>
+        </equippedStatOffsets>
+		<smeltable>false</smeltable>
+        <comps>
+            <li Class="VFECore.CompProperties_Shield">
+                <shieldTags>
+                    <li>SpacerMilitary</li>
+                </shieldTags>
+                <useDeflectMetalEffect>true</useDeflectMetalEffect>
+                <coveredBodyPartGroups>
+                    <li>Neck</li>
+                    <li>Torso</li>
+                    <li>Arms</li>
+                    <li>Hands</li>
+                </coveredBodyPartGroups>
+                <offHandGraphicData>
+                    <texPath>Things/Item/Equipment/Shield/ArchotechShield</texPath>
+                    <graphicClass>Graphic_Multi</graphicClass>
+                    <shaderType>MetaOverlay</shaderType>
+                    <drawSize>1.4</drawSize>
+                </offHandGraphicData>
+                 <offHandHoldOffset>
+                    <northDefault>
+                        <offset>(-0.05, 0, 0.2)</offset>
+                        <behind>true</behind>
+                    </northDefault>
+                    <east>
+                        <offset>(-0.15, 0, 0.2)</offset>
+                        <behind>true</behind>
+                    </east>
+                    <south>
+                        <offset>(0.2, -0.04, 0.2)</offset>
+                    </south>
+                    <west>
+                        <offset>(0.15, 0, 0.2)</offset>
+                    </west>
+                </offHandHoldOffset>
+            </li>
+        </comps>
+		<recipeMaker IsNull="True"/>
+    </ThingDef>
+</Defs>
